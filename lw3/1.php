@@ -5,17 +5,17 @@ $bsp = true; //true - предыдущий символ пробел, false - п
 $resultText = '';
 for ($i = 0; $i < strlen($text); $i++)
 {
-    if (($text[$i] === '*') && ($bsp === false))
+    if (($text[$i] === ' ') && ($bsp === false))
     {
         $resultText .= $text[$i];
         $bsp = true;
-    } else if ($text[$i] !== '*')
+    } else if ($text[$i] !== ' ')
     {
         $resultText .=  $text[$i];
         $bsp = false;
     }
 }
-if ($resultText[strlen($resultText)-1] === '*')
+if ($resultText[strlen($resultText)-1] === ' ')
 {
     $resultText =  substr($resultText, 0, -1);
 }
